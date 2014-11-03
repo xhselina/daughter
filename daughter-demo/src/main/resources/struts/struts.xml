@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!--  package包属性说明 
+		name：该属性为package的name名字，在其他的package中不能重复。 
+		namespace：该属性是默认路径，一般在模块中会有不同的文件夹，
+		最好把你的模块对应jsp文件的文件夹的路径写在此属性里，这样在转发的jsp页面和jsp页面中的action可以直接写action的名字。 
+	 例子 <package extends="struts-default" name="hbjxc" namespace="/jsp/sys">  
+        <action name="testAction" class="Test" method="test">  
+            <result name="success">success.jsp</result>
+            <result name="error">fail.jsp</result>  
+        </action>
+        
+        通配符说明:支持一个action多个转发页面
+	 -->
+<!-- 	<constant name="struts.enable.DynamicMethodInvocation" value="false" /> -->
+<!-- 	<constant name="struts.devMode" value="true" /> -->
+	<package name="default" namespace="/" extends="struts-default">
+<!-- 		<default-action-ref name="index" /> -->
+		<!-- 全局的Result配置 -->
+		<global-results>
+			<result name="error">/error/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error" />
+		</global-exception-mappings>
+
+<!-- 		<action name="index"> -->
+<!-- 			<result type="redirectAction" > -->
+<!-- 				<param name="actionName">HelloWorld</param> -->
+<!-- 				<param name="namespace">/example</param> -->
+<!-- 			</result> -->
+<!-- 		</action> -->
+	</package>
+
+	<include file="struts/struts-constant.xml" />
+	<include file="struts/struts-book.xml" />
+
+	<!-- Add packages here -->
+
+</struts>

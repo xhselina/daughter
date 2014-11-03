@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.china</groupId>
+	<artifactId>daughter</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>daughter</name>
+	<description>framework</description>
+	<url>http://maven.apache.org</url>
+
+	<developers>
+		<developer>
+			<name>junhui.ji</name>
+			<email>chadian90hou@163.com</email>
+			<organization>china</organization>
+		</developer>
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- <org.springframework.version>4.1.1.RELEASE</org.springframework.version> -->
+		<!-- <junit.version>4.11</junit.version> -->
+	</properties>
+
+	<modules>
+		<module>daughter-core</module>
+		<module>daughter-demo</module>
+		<module>daughter-dao</module>
+		<module>daughter-service</module>
+		<module>daughter-model</module>
+		<module>daughter-controller</module>
+		<module>daughter-study</module>
+		<module>daughter-test</module>
+	</modules>
+
+	<distributionManagement>
+		<repository></repository>
+	</distributionManagement>
+
+	<!-- 子pom如果想用 只需要引入 groupId and artifactId -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- spring start -->
+			<!-- <dependency> -->
+			<!-- <groupId>org.springframework</groupId> -->
+			<!-- <artifactId>spring-core</artifactId> -->
+			<!-- <version>${org.springframework.version}</version> -->
+			<!-- </dependency> -->
+
+			<!-- Application Context (depends on spring-core, spring-expression, spring-aop, 
+				spring-beans) This is the central artifact for Spring's Dependency Injection 
+				Container and is generally always defined -->
+			<!-- <dependency> -->
+			<!-- <groupId>org.springframework</groupId> -->
+			<!-- <artifactId>spring-context</artifactId> -->
+			<!-- <version>${org.springframework.version}</version> -->
+			<!-- </dependency> -->
+			<!-- spring end -->
+			<!-- junit -->
+			<!-- <dependency> -->
+			<!-- <groupId>junit</groupId> -->
+			<!-- <artifactId>junit</artifactId> -->
+			<!-- <version>${junit.version}</version> -->
+			<!-- <scope>test</scope> -->
+			<!-- </dependency> -->
+		</dependencies>
+	</dependencyManagement>
+</project>

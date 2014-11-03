@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans.xsd ">
+
+	<!-- ActiveMQ 连接 -->
+	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="tcp://localhost:61616" />
+		<property name="useAsyncSend" value="true" />
+	</bean>
+	<bean id="destination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0" value="myqueue"></constructor-arg>
+	</bean>
+
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="connectionFactory"></property>
+		<property name="defaultDestination" ref="destination"></property>
+		<property name="messageConverter" ref="innerMessageConverter"></property>
+	</bean>
+
+	<bean id="innerMessageConverter" class="jmu.xmpg.service.jms.InnerMessageConverter"></bean>
+
+	<bean id="messageService" class="jmu.xmpg.service.jms.MessageServiceImpl">
+		<!-- <property name="jmsTemplate" ref="jmsTemplate"></property> -->
+	</bean>
+
+	<bean id="messageListener" class="jmu.xmpg.service.jms.MessageMDB"></bean>
+
+	<bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer" lazy-init="false">
+		<property name="connectionFactory" ref="connectionFactory"></property>
+		<property name="destination" ref="destination"></property>
+		<property name="messageListener" ref="messageListener"></property>
+		<property name="concurrentConsumers" value="5"></property>
+		<!--0:CACHE_NONE,1:CACHE_CONNECTION,2:CACHE_SESSION,3:CACHE_CONSUMER,4:CACHE_AUTO -->
+		<property name="cacheLevel" value="0" />
+	</bean>
+
+</beans>

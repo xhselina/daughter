@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:cache="http://www.springframework.org/schema/cache" 
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/cache 
+    		 http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+	<!-- 使用 annotation -->
+	<context:annotation-config />
+	
+	<cache:annotation-driven cache-manager="cacheManager"/>
+
+	<!-- 使用 annotation 自动注册bean,并检查@Controller, @Service, @Repository注解已被注入 -->
+	<context:component-scan base-package="service*,dao*" />
+
+	<!-- hibernate属性配置    这种方式  在用unit测试的时候 找不到hibernate.properties -->
+	<!-- <context:property-placeholder location="/WEB-INF/classes/hibernate/hibernate.properties" /> -->
+	<!--<context:property-placeholder location="../hibernate/hibernate.properties" /> -->
+
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="classpath:hibernate/hibernate.properties" />
+	</bean>
+
+	<!-- Hibernate 配置管理 -->
+	<import resource="applicationContext-persistence.xml" />
+	<import resource="spring-cache-anno.xml" />
+	<!-- quartz 提醒配置 -->
+	<!-- <import resource="../quartz2.2/quartz.xml" /> -->
+
+</beans>
