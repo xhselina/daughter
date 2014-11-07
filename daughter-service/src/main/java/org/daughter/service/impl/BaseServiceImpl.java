@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import org.daughter.dao.IBaseDAO;
+import org.daughter.hibernate.IBaseDAO;
 import org.daughter.service.IBaseService;
 import org.springframework.cache.annotation.Cacheable;
 

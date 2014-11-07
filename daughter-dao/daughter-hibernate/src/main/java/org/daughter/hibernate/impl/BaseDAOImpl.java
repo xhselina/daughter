@@ -1,4 +1,4 @@
-package org.daughter.dao.impl;
+package org.daughter.hibernate.impl;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -8,7 +8,7 @@ import java.util.Objects;
 
 import org.daughter.core.util.CommonUtil;
 import org.daughter.core.util.ReflectUtils;
-import org.daughter.dao.IBaseDAO;
+import org.daughter.hibernate.IBaseDAO;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

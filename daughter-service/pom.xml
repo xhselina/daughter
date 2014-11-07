@@ -21,7 +21,7 @@
 		<!-- 引用core这个模块 -->
 		<dependency>
 			<groupId>com.china</groupId>
-			<artifactId>daughter-dao</artifactId>
+			<artifactId>daughter-hibernate</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

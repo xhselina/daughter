@@ -1,4 +1,4 @@
-package org.daughter.dao;
+package org.daughter.hibernate;
 
 import java.io.Serializable;
 import java.util.List;

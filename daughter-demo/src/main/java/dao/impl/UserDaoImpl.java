@@ -2,7 +2,6 @@ package dao.impl;
 
 import model.User;
 
-import org.daughter.dao.impl.BaseDAOImpl;
 import org.springframework.stereotype.Repository;
 
 import dao.IUserDao;

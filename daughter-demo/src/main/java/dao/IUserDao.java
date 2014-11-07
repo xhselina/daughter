@@ -1,7 +1,5 @@
 package dao;
 
-import org.daughter.dao.IBaseDAO;
-
 import model.User;
 
 /**

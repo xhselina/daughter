@@ -8,7 +8,7 @@ import javax.annotation.Resource;
 import model.User;
 
 import org.daughter.core.util.CommonUtil;
-import org.daughter.dao.IBaseDAO;
+import org.daughter.hibernate.IBaseDAO;
 import org.daughter.service.impl.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 
