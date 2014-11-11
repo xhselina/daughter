@@ -6,6 +6,9 @@
         <dependent-module archiveName="daughter-service-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/daughter-service/daughter-service">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="daughter-hibernate-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/daughter-hibernate/daughter-hibernate">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="daughter-model-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/daughter-model/daughter-model">
             <dependency-type>uses</dependency-type>
         </dependent-module>
