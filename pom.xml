@@ -38,7 +38,6 @@
 		<module>daughter-model</module>
 		<module>daughter-controller</module>
 		<module>daughter-study</module>
-		<module>daughter-test</module>
 	</modules>
 
 	<!-- 子pom如果想用 只需要引入 groupId and artifactId -->
