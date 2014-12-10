@@ -5,14 +5,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import org.daughter.hibernate.IBaseDAO;
+import org.daughter.hibernate.IBaseDao;
 import org.daughter.service.IBaseService;
 import org.springframework.cache.annotation.Cacheable;
 
 //@Transactional
 public abstract class BaseServiceImpl<T, PK extends Serializable> implements IBaseService<T, PK> {
 
-	public abstract IBaseDAO<T, PK> baseDAO();
+	public abstract IBaseDao<T, PK> baseDAO();
 
 	/**
 	 * 使用了一个名字是myCache的缓存，以key,value的方式缓存 key可以为null,也可以是spEl表达式，默认是参数名的组合

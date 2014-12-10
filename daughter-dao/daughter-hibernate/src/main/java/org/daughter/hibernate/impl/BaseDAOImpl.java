@@ -8,13 +8,13 @@ import java.util.Objects;
 
 import org.daughter.core.util.CommonUtil;
 import org.daughter.core.util.ReflectUtils;
-import org.daughter.hibernate.IBaseDAO;
+import org.daughter.hibernate.HibernateBaseUtil;
+import org.daughter.hibernate.IBaseDao;
 import org.hibernate.Query;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class BaseDAOImpl<T, PK extends Serializable> implements IBaseDAO<T, PK> {
+public class BaseDAOImpl<T, PK extends Serializable> extends HibernateBaseUtil implements IBaseDao<T, PK> {
 
 	private Class<T> clazz;
 	@Autowired
@@ -24,15 +24,6 @@ public class BaseDAOImpl<T, PK extends Serializable> implements IBaseDAO<T, PK> 
 		// this.clazz = (Class<T>) ((ParameterizedType)
 		// (this.getClass().getGenericSuperclass())).getActualTypeArguments()[0];
 		this.clazz = ReflectUtils.getClassGenricType(getClass());
-	}
-
-	/**
-	 * 获取session
-	 * 
-	 * @return
-	 */
-	private Session getSession() {
-		return sessionFactory.getCurrentSession();
 	}
 
 	public void add(T entity) {

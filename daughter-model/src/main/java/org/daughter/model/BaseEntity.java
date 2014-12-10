@@ -36,21 +36,9 @@ public class BaseEntity implements Serializable {
 	 */
 	private String creator;
 	/**
-	 * 更新人
-	 */
-	private String updater;
-	/**
 	 * 创建时间
 	 */
 	private Date createDate = new Date();
-	/**
-	 * 更新时间
-	 */
-	private Date updateDate;
-	/**
-	 * 更新次数
-	 */
-	private int count;
 
 	/**
 	 * 构造函数
@@ -73,36 +61,12 @@ public class BaseEntity implements Serializable {
 		this.creator = creator;
 	}
 
-	public String getUpdater() {
-		return updater;
-	}
-
-	public void setUpdater(String updater) {
-		this.updater = updater;
-	}
-
 	public Date getCreateDate() {
 		return createDate;
 	}
 
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
-	}
-
-	public Date getUpdateDate() {
-		return updateDate;
-	}
-
-	public void setUpdateDate(Date updateDate) {
-		this.updateDate = updateDate;
-	}
-
-	public int getCount() {
-		return count;
-	}
-
-	public void setCount(int count) {
-		this.count = count;
 	}
 
 	public long getId() {

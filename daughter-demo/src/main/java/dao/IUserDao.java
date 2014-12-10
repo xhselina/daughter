@@ -1,5 +1,7 @@
 package dao;
 
+import org.daughter.hibernate.IBaseDao;
+
 import model.User;
 
 /**
@@ -8,6 +10,6 @@ import model.User;
  * @author junhui.ji
  * 
  */
-public interface IUserDao extends IBaseDAO<User, java.lang.Long> {
+public interface IUserDao extends IBaseDao<User, java.lang.Long> {
 
 }

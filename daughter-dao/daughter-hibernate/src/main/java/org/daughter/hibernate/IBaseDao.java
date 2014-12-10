@@ -10,7 +10,7 @@ import java.util.Objects;
  * 
  * @author Administrator 2013-11-2 下午2:39:43
  */
-public interface IBaseDAO<T, PK extends Serializable> {
+public interface IBaseDao<T, PK extends Serializable> {
 
 	/**
 	 * 添加一个对象

@@ -25,7 +25,7 @@ import org.hibernate.SessionFactory;
  * 
  * @author Administrator 2013-11-2 下午2:50:04
  */
-public class HibernateBaseDAO {
+public class HibernateBaseUtil {
 
 	private SessionFactory sessionFactory;
 

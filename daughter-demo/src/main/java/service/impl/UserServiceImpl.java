@@ -8,7 +8,7 @@ import javax.annotation.Resource;
 import model.User;
 
 import org.daughter.core.util.CommonUtil;
-import org.daughter.hibernate.IBaseDAO;
+import org.daughter.hibernate.IBaseDao;
 import org.daughter.service.impl.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +34,7 @@ public class UserServiceImpl extends BaseServiceImpl<User, Long> implements IUse
 	}
 
 	@Override
-	public IBaseDAO<User, Long> baseDAO() {
+	public IBaseDao<User, Long> baseDAO() {
 		return userDao;
 	}
 

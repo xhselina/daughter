@@ -1,8 +1,12 @@
 package controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.User;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import service.IUserService;
-
 /**
  * 用户登陆、注销
  * 
@@ -26,6 +29,15 @@ public class UserController {
 
 	@Resource
 	private IUserService userService;
+	
+	/**
+	 * 获取所有用户
+	 * @return
+	 */
+	@RequestMapping(value = "getAll",method=RequestMethod.POST)
+	public List<User> getAll(){
+		return userService.getAll();
+	}
 
 	@RequestMapping(value = "showUserJsp", method = RequestMethod.GET)
 	public String showUser(HttpServletRequest request, HttpServletResponse response) {
@@ -47,7 +59,6 @@ public class UserController {
 	// user.setRealName("selina");
 	// user.setCreateDate(new Date());
 	// user.setDes("hahahahhah这个方法很聪明");
-	// userService.save(user);
 	// // JackJsonUtil.stringToJson(response, "success", "true");
 	// System.out.println("请求成功!");
 	// }

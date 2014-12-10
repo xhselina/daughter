@@ -32,7 +32,7 @@
 
 	<modules>
 		<module>daughter-core</module>
-		<!-- <module>daughter-demo</module> -->
+<!-- 		<module>daughter-demo</module> -->
 		<module>daughter-dao</module>
 		<module>daughter-service</module>
 		<module>daughter-model</module>
